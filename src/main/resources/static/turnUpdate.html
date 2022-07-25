@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Modificar turno</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="src/js/update_turn.js"></script>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" onclick="history.back()">Regresar</a>
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+            <h3>Modificar turno</h3>
+
+			<form id="update-turn">
+				<div class="form-group">
+					<label class="control-label" for="date">Fecha:</label>
+					<input type="date" class="form-control" id="date"
+						   name="date" required></input></div>
+				<div class="form-group">
+					<label class="control-label" for="dni">Dni paciente:</label>
+					<input type="text" class="form-control" id="dni"
+						   placeholder="Ingrese el dni del paciente"
+						   name="dni" required></input>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="registrationNumber">Matrícula odontólogo:</label>
+					<input type="text" class="form-control" id="registrationNumber"
+						   placeholder="Ingrese la matrícula del odontólogo"
+						   name="registrationNumber" required></input>
+				</div>
+				<button type="submit" class="btn btn-danger"
+						id="btn-turn">Modificar</button>
+			</form>
+            <div id="response" style="display:none; margin-top:10px">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Lista de turnos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="src/js/get_all_turn.js"></script>
+    <script type="text/javascript" src="src/js/delete_turn.js"></script>
+	<script type="text/javascript" src="src/js/show_turn.js"></script>
+</head>
+<body>
+<div class="container">
+    <ul id="ulTurnos" class="nav nav-pills">
+        <li class="nav-item">
+            <a class="btn btn-danger" href="/admin-panel.html" style="margin: 10px; margin-top: 30px;">Regresar</a>
+        </li>
+        <li class="nav-item" style="display: flex; flex-direction: column">
+            <a class="btn btn-danger"  href="/turnLoad.html" style="margin: 10px;margin-top: 30px;">Agregar turno</a>
+			<a class="btn btn-danger"  href="/turnList.html" style="margin: 10px;margin-top: 30px;">Listar todos</a>
+        </li>
+        <li class="nav-item" style="display: flex;">
+            <form id="search-dni" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="form-group">
+                    <label class="control-label" for="dni-search">Dni paciente:</label>
+                    <input type="text" class="form-control" id="dni-search"
+                        placeholder="Dni"
+                        name="registrationNumber-search" required></input>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-danger"
+                        id="btn-search-dni" style="margin-left:center">Buscar
+                    </button>
+                </div>
+            </form>
+        </li>
+		<li class="nav-item" style="display: flex;">
+			<form id="search-registrationNumber" style="display: flex; flex-direction: column; align-items: center;">
+				<div class="form-group">
+					<label class="control-label" for="registrationNumber-search">Matrícula odontólogo:</label>
+					<input type="text" class="form-control" id="registrationNumber-search"
+						   placeholder="Matrícula"
+						   name="registrationNumber-search" required></input>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-danger"
+							id="btn-search-registrationNumber" style="margin-left:center">Buscar
+					</button>
+				</div>
+			</form>
+		</li>
+		<li class="nav-item" style="display: flex;">
+			<form id="search-date" style="display: flex; flex-direction: column; align-items: center;">
+				<div class="form-group" style="display: flex; flex-direction: row">
+					<div class="form-group">
+					<label class="control-label" for="minDate-search">Fecha inicial:</label>
+					<input type="date" class="form-control" id="minDate-search"
+						   name="minDate-search" required></input>
+					</div>
+					<div class="form-group">
+					<label class="control-label" for="maxDate-search">Fecha final:</label>
+					<input type="date" class="form-control" id="maxDate-search"
+						   name="maxDate-search" required></input>
+					</div>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-danger"
+							id="search-date" style="margin-left:center">Buscar
+					</button>
+				</div>
+			</form>
+		</li>
+    </ul>
+
+    <div id="div_pelicula_table" style="width:100%">
+        <h1>Turnos</h1>
+        <div class="row col-md-6 table-responsive" style="width:100%;overflow-x: visible">
+            <table id="turnTable" class="table table-striped" style="width:100%">
+                <thead style="width:100%">
+                <tr style="width:100%">
+					<th></th>
+                    <th>Fecha</th>
+                    <th>Paciente</th>
+					<th>Dni</th>
+					<th>Odontólogo</th>
+					<th>Matrícula</th>
+                    <th></th>
+
+                </tr>
+                </thead>
+                <tbody id="turnTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+</div>
+</body>
+</html>

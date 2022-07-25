@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Lista de odontólogs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="src/js/get_all_odontologist.js"></script>
+    <script type="text/javascript" src="src/js/delete_odontologist.js"></script>
+	<script type="text/javascript" src="src/js/see_turns.js"></script>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="btn btn-danger" href="/admin-panel.html" style="margin: 10px; margin-top: 30px;">Regresar</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-danger"  href="/odontologistLoad.html" style="margin: 10px;margin-top: 30px;">Agregar odontólogo</a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-danger"  href="/odontologistList.html" style="margin: 10px;margin-top: 30px;">Listar todos</a>
+        </li>
+        <li class="nav-item" style="display: flex;">
+            <form id="search" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="form-group">
+                    <label class="control-label" for="registrationNumber-search">Matrícula:</label>
+                    <input type="text" class="form-control" id="registrationNumber-search"
+                        placeholder="Matrícula"
+                        name="registrationNumber-search" required></input>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-danger"
+                        id="btn-search" style="margin-left:center">Buscar
+                    </button>
+                </div>
+            </form>
+        </li>
+    </ul>
+
+    <div id="div_pelicula_table">
+        <h1>Odontólogos</h1>
+        <div class="row col-md-6 table-responsive" style="width:100%;overflow-x: visible">
+            <table id="odontologistTable" class="table table-striped">
+                <thead>
+                <tr>
+					<th></th>
+                    <th>Nombre</th>
+                    <th>Matrícula</th>
+					<th>Cantidad de turnos</th>
+                    <th></th>
+					<th></th>
+                </tr>
+                </thead>
+                <tbody id="odontologistTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+</div>
+</body>
+</html>
